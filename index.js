@@ -7,38 +7,47 @@ function initialize() {
     switch (e.key) {
       case 'a':
         keys[0].setAttribute('class', 'key playing');
+        sounds[0].currentTime = 0;
         sounds[0].play();
         break;
       case 's':
         keys[1].setAttribute('class', 'key playing');
+        sounds[1].currentTime = 0;
         sounds[1].play();
         break;
       case 'd':
         keys[2].setAttribute('class', 'key playing');
+        sounds[2].currentTime = 0;
         sounds[2].play();
         break;
       case 'f':
         keys[3].setAttribute('class', 'key playing');
+        sounds[3].currentTime = 0;
         sounds[3].play();
         break;
       case 'g':
         keys[4].setAttribute('class', 'key playing');
+        sounds[4].currentTime = 0;
         sounds[4].play();
         break;
       case 'h':
         keys[5].setAttribute('class', 'key playing');
+        sounds[5].currentTime = 0;
         sounds[5].play();
         break;
       case 'j':
         keys[6].setAttribute('class', 'key playing');
+        sounds[6].currentTime = 0;
         sounds[6].play();
         break;
       case 'k':
         keys[7].setAttribute('class', 'key playing');
+        sounds[7].currentTime = 0;
         sounds[7].play();
         break;
       case 'l':
         keys[8].setAttribute('class', 'key playing');
+        sounds[8].currentTime = 0;
         sounds[8].play();
         break;
       default:
