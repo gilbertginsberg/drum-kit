@@ -1,5 +1,6 @@
 html, body {
   height: 100vh;
+  box-sizing: border-box;
 }
 
 main {
@@ -12,7 +13,7 @@ main {
 }
 
 .keys {
-  width: 55%;
+  width: 75%;
   display: flex;
   justify-content: space-between;
 }
@@ -22,7 +23,25 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 150%;
-
+  width: 80px;
+  height: 80px;
   border: 1px solid green;
+}
+
+.playing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid red;
+}
+
+.sound {
+  font-size: 100%;
+}
+
+kbd {
+  font-size: 250%;
 }
