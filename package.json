@@ -1,0 +1,29 @@
+{
+  "name": "drum-kit",
+  "version": "1.0.0",
+  "description": "JavaScript drum kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilbertginsberg/drum-kit.git"
+  },
+  "keywords": [
+    "drums"
+  ],
+  "author": "Gilbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilbertginsberg/drum-kit/issues"
+  },
+  "homepage": "https://github.com/gilbertginsberg/drum-kit#readme",
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.10.3"
+  }
+}
