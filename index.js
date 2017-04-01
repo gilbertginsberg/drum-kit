@@ -1,95 +1,27 @@
 function initialize() {
-  const keys = document.querySelectorAll('.key');
-  const sounds = document.querySelectorAll('audio');
-  const message = document.getElementById('message');
+  window.addEventListener('keydown', (e) => {
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    const message = document.getElementById('message');
+    const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
-  document.addEventListener('keydown', (e) => {
-    switch (e.key) {
-      case 'a':
-        keys[0].setAttribute('class', 'key playing');
-        sounds[0].currentTime = 0;
-        sounds[0].play();
-        break;
-      case 's':
-        keys[1].setAttribute('class', 'key playing');
-        sounds[1].currentTime = 0;
-        sounds[1].play();
-        break;
-      case 'd':
-        keys[2].setAttribute('class', 'key playing');
-        sounds[2].currentTime = 0;
-        sounds[2].play();
-        break;
-      case 'f':
-        keys[3].setAttribute('class', 'key playing');
-        sounds[3].currentTime = 0;
-        sounds[3].play();
-        break;
-      case 'g':
-        keys[4].setAttribute('class', 'key playing');
-        sounds[4].currentTime = 0;
-        sounds[4].play();
-        break;
-      case 'h':
-        keys[5].setAttribute('class', 'key playing');
-        sounds[5].currentTime = 0;
-        sounds[5].play();
-        break;
-      case 'j':
-        keys[6].setAttribute('class', 'key playing');
-        sounds[6].currentTime = 0;
-        sounds[6].play();
-        break;
-      case 'k':
-        keys[7].setAttribute('class', 'key playing');
-        sounds[7].currentTime = 0;
-        sounds[7].play();
-        break;
-      case 'l':
-        keys[8].setAttribute('class', 'key playing');
-        sounds[8].currentTime = 0;
-        sounds[8].play();
-        break;
-      default:
-        message.innerHTML = 'Play a beat!';
-        setTimeout(() => {
-          message.innerHTML = '';
-        }, 500);
-    }
-  });
+    console.log(key);
 
-  document.addEventListener('keyup', (e) => {
-    switch (e.key) {
-      case 'a':
-        keys[0].setAttribute('class', 'key');
-        break;
-      case 's':
-        keys[1].setAttribute('class', 'key');
-        break;
-      case 'd':
-        keys[2].setAttribute('class', 'key');
-        break;
-      case 'f':
-        keys[3].setAttribute('class', 'key');
-        break;
-      case 'g':
-        keys[4].setAttribute('class', 'key');
-        break;
-      case 'h':
-        keys[5].setAttribute('class', 'key');
-        break;
-      case 'j':
-        keys[6].setAttribute('class', 'key');
-        break;
-      case 'k':
-        keys[7].setAttribute('class', 'key');
-        break;
-      case 'l':
-        keys[8].setAttribute('class', 'key');
-        break;
-      default:
-        console.log('Wrong key pressed');
+    if (!key) {
+      message.innerHTML = 'Play a beat!';
+      setTimeout(() => {
+        message.innerHTML = '';
+      }, 500);
     }
+
+    key.setAttribute('class', 'key playing');
+    sound.currentTime = 0;
+    sound.play();
+
+    key.addEventListener('transitionend', (ev) => {
+      const key = ev.target;
+      console.log(ev);
+      key.classList.remove('playing');
+    }, false);
   });
 }
 
