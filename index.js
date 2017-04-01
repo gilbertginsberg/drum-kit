@@ -6,8 +6,8 @@ function initialize() {
 
     if (!key) {
       message.classList.add('fade');
-      message.addEventListener('transitionend', () => {
-        message.classList.remove('fade');
+      message.addEventListener('transitionend', (ev) => {
+        ev.target.classList.remove('fade');
       });
     } else {
       key.setAttribute('class', 'key playing');
