@@ -49,8 +49,14 @@ kbd {
   font-size: 250%;
 }
 
-#message {
+.msg {
   bottom: 200px;
   position: absolute;
   font-size: 200%;
+  color: #D32F2F;
+  transition: color .75s;
+}
+
+.fade {
+  color: #fff;
 }

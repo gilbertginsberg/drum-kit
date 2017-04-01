@@ -4,24 +4,20 @@ function initialize() {
     const message = document.getElementById('message');
     const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
-    console.log(key);
-
     if (!key) {
-      message.innerHTML = 'Play a beat!';
-      setTimeout(() => {
-        message.innerHTML = '';
-      }, 500);
+      message.classList.add('fade');
+      message.addEventListener('transitionend', () => {
+        message.classList.remove('fade');
+      });
+    } else {
+      key.setAttribute('class', 'key playing');
+      sound.currentTime = 0;
+      sound.play();
+
+      key.addEventListener('transitionend', (ev) => {
+        ev.target.classList.remove('playing');
+      }, false);
     }
-
-    key.setAttribute('class', 'key playing');
-    sound.currentTime = 0;
-    sound.play();
-
-    key.addEventListener('transitionend', (ev) => {
-      const key = ev.target;
-      console.log(ev);
-      key.classList.remove('playing');
-    }, false);
   });
 }
 
