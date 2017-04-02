@@ -1,9 +1,8 @@
-html {
+html, body {
   height: 100vh;
 }
 
 body {
-  height: 100vh;
   box-sizing: border-box;
   font-size: medium;
   background-color: #D32F2F;
